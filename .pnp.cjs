@@ -1023,7 +1023,7 @@ const RAW_RUNTIME_STATE =
           ["autoprefixer", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:10.4.20"],\
           ["@types/postcss", null],\
           ["browserslist", "npm:4.24.2"],\
-          ["caniuse-lite", "npm:1.0.30001680"],\
+          ["caniuse-lite", "npm:1.0.30001682"],\
           ["fraction.js", "npm:4.3.7"],\
           ["normalize-range", "npm:0.1.2"],\
           ["picocolors", "npm:1.1.1"],\
@@ -1080,7 +1080,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/browserslist-npm-4.24.2-0bc5f13e3b-10c0.zip/node_modules/browserslist/",\
         "packageDependencies": [\
           ["browserslist", "npm:4.24.2"],\
-          ["caniuse-lite", "npm:1.0.30001680"],\
+          ["caniuse-lite", "npm:1.0.30001682"],\
           ["electron-to-chromium", "npm:1.5.63"],\
           ["node-releases", "npm:2.0.18"],\
           ["update-browserslist-db", "virtual:0bc5f13e3b070c660ccf3396ff30b6fc44ede2343c6543d593ce4624807ab1bafdbcd764ac20b4d55e6854e63e2568f1c6d09371eb639766b95e2d401b5b05cb#npm:1.1.1"]\
@@ -1128,10 +1128,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["caniuse-lite", [\
-      ["npm:1.0.30001680", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/caniuse-lite-npm-1.0.30001680-df226595b2-10c0.zip/node_modules/caniuse-lite/",\
+      ["npm:1.0.30001682", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/caniuse-lite-npm-1.0.30001682-dd2a2bfe53-10c0.zip/node_modules/caniuse-lite/",\
         "packageDependencies": [\
-          ["caniuse-lite", "npm:1.0.30001680"]\
+          ["caniuse-lite", "npm:1.0.30001682"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3035,20 +3035,20 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["tldts", [\
-      ["npm:6.1.61", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/tldts-npm-6.1.61-6d8b83f53a-10c0.zip/node_modules/tldts/",\
+      ["npm:6.1.62", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/tldts-npm-6.1.62-12b9fb34a5-10c0.zip/node_modules/tldts/",\
         "packageDependencies": [\
-          ["tldts", "npm:6.1.61"],\
-          ["tldts-core", "npm:6.1.61"]\
+          ["tldts", "npm:6.1.62"],\
+          ["tldts-core", "npm:6.1.62"]\
         ],\
         "linkType": "HARD"\
       }]\
     ]],\
     ["tldts-core", [\
-      ["npm:6.1.61", {\
-        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/tldts-core-npm-6.1.61-bf852142df-10c0.zip/node_modules/tldts-core/",\
+      ["npm:6.1.62", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/tldts-core-npm-6.1.62-4078ab7e88-10c0.zip/node_modules/tldts-core/",\
         "packageDependencies": [\
-          ["tldts-core", "npm:6.1.61"]\
+          ["tldts-core", "npm:6.1.62"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3068,7 +3068,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/tough-cookie-npm-5.0.0-93c44236b9-10c0.zip/node_modules/tough-cookie/",\
         "packageDependencies": [\
           ["tough-cookie", "npm:5.0.0"],\
-          ["tldts", "npm:6.1.61"]\
+          ["tldts", "npm:6.1.62"]\
         ],\
         "linkType": "HARD"\
       }]\
