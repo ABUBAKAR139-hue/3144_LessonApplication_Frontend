@@ -30,6 +30,7 @@ const RAW_RUNTIME_STATE =
           ["@vitejs/plugin-vue", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:5.2.0"],\
           ["@vue/test-utils", "npm:2.4.6"],\
           ["autoprefixer", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:10.4.20"],\
+          ["font-awesome", "npm:4.7.0"],\
           ["jsdom", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:25.0.1"],\
           ["postcss", "npm:8.4.49"],\
           ["tailwindcss", "npm:3.4.15"],\
@@ -50,6 +51,7 @@ const RAW_RUNTIME_STATE =
           ["@vitejs/plugin-vue", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:5.2.0"],\
           ["@vue/test-utils", "npm:2.4.6"],\
           ["autoprefixer", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:10.4.20"],\
+          ["font-awesome", "npm:4.7.0"],\
           ["jsdom", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:25.0.1"],\
           ["postcss", "npm:8.4.49"],\
           ["tailwindcss", "npm:3.4.15"],\
@@ -1568,6 +1570,15 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["fill-range", "npm:7.1.1"],\
           ["to-regex-range", "npm:5.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["font-awesome", [\
+      ["npm:4.7.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/font-awesome-npm-4.7.0-7a553c5fbb-10c0.zip/node_modules/font-awesome/",\
+        "packageDependencies": [\
+          ["font-awesome", "npm:4.7.0"]\
         ],\
         "linkType": "HARD"\
       }]\

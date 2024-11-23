@@ -1,24 +1,12 @@
 <template>
-  <div class="lesson-list">
-    <h2 class="text-2xl font-semibold mb-4">Available Lessons</h2>
-    <div v-if="lessons.length === 0" class="text-gray-500">
-      No lessons available.
-    </div>
-    <div v-else>
-      <ul>
-        <li
-          v-for="(lesson, index) in lessons"
-          :key="index"
-          class="flex justify-between items-center mb-4">
-          <span>{{ lesson.title }}</span>
-          <span>{{ lesson.price | currency }}</span>
-        </li>
-      </ul>
-    </div>
+  <div class="lesson-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <LessonItem v-for="lesson in lessons" :key="lesson.id" :lesson="lesson" />
   </div>
 </template>
 
 <script>
+import LessonItem from "./LessonItem.vue";
+
 export default {
   name: "LessonList",
   props: {
@@ -27,19 +15,12 @@ export default {
       required: true,
     },
   },
-  filters: {
-    currency(value) {
-      return "£" + value.toFixed(2);
-    },
+  components: {
+    LessonItem,
   },
 };
 </script>
 
 <style scoped>
-.lesson-list {
-  padding: 20px;
-  background-color: #f9fafb;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+/* Custom styles can be added if needed */
 </style>

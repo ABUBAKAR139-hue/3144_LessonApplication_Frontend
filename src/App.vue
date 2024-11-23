@@ -1,31 +1,57 @@
 <template>
   <div class="min-h-screen bg-gray-50">
-    <header class="bg-blue-600 text-white py-6">
+    <header class="bg-blue-600 text-white py-2">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-semibold">Lesson Application</h1>
-        <p class="text-xl mt-2">Your Learning and Shopping Cart</p>
+        <!-- Navigation -->
+        <nav
+          class="relative flex flex-wrap items-center justify-between px-2 py-3 bg-blueGray-500 mb-3">
+          <div
+            class="container px-4 mx-auto flex flex-wrap items-center justify-between">
+            <div
+              class="w-full relative flex justify-between lg:w-auto px-4 lg:static lg:block lg:justify-start">
+              <h1
+                class="text-2xl font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-white">
+                Lessons Application
+              </h1>
 
-        <!-- Navigation links -->
-        <nav class="mt-4">
-          <ul class="flex space-x-6">
-            <li>
-              <router-link to="/" class="text-white hover:text-blue-300"
-                >Lessons</router-link
-              >
-            </li>
-            <li>
-              <router-link to="/cart" class="text-white hover:text-blue-300"
-                >Shopping Cart</router-link
-              >
-            </li>
-            <li>
-              <router-link
-                to="/confirmation"
-                class="text-white hover:text-blue-300"
-                >Confirmation</router-link
-              >
-            </li>
-          </ul>
+              <button
+                class="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                type="button"
+                @click="toggleNavbar"
+                :aria-expanded="showMenu ? 'true' : 'false'"
+                aria-label="Toggle Navigation">
+                <i class="fas fa-bars text-2xl"></i>
+              </button>
+            </div>
+
+            <div
+              :class="{ hidden: !showMenu, flex: showMenu }"
+              class="lg:flex lg:flex-grow items-center">
+              <ul class="flex flex-col lg:flex-row list-none ml-auto">
+                <li class="nav-item">
+                  <RouterLink
+                    to="/"
+                    class="px-3 py-2 flex items-center text-sm uppercase font-semibold leading-snug text-white hover:opacity-75">
+                    Lessons
+                  </RouterLink>
+                </li>
+                <li class="nav-item">
+                  <RouterLink
+                    to="/cart"
+                    class="px-3 py-2 flex items-center text-sm uppercase font-semibold leading-snug text-white hover:opacity-75">
+                    Shopping Cart
+                  </RouterLink>
+                </li>
+                <!-- <li class="nav-item">
+                  <RouterLink
+                    to="/confirmation"
+                    class="px-3 py-2 flex items-center text-sm uppercase font-semibold leading-snug text-white hover:opacity-75">
+                    Confirmation
+                  </RouterLink>
+                </li> -->
+              </ul>
+            </div>
+          </div>
         </nav>
       </div>
     </header>
@@ -46,7 +72,19 @@
 </template>
 
 <script>
+// import "font-awesome/css/font-awesome.min.css";
+
 export default {
   name: "App",
+  data() {
+    return {
+      showMenu: false,
+    };
+  },
+  methods: {
+    toggleNavbar() {
+      this.showMenu = !this.showMenu;
+    },
+  },
 };
 </script>
