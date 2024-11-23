@@ -1,16 +1,26 @@
 <template>
   <div>
-    <LessonList :lessons="lessons" />
+    <!-- Passing props and handle updates via events -->
+    <SortOptions
+      :sortAttribute="sortAttribute"
+      :sortOrder="sortOrder"
+      @update:sortAttribute="sortAttribute = $event"
+      @update:sortOrder="sortOrder = $event" />
+
+    <LessonList :lessons="sortedLessons" />
   </div>
 </template>
 
 <script>
 import LessonList from "../components/LessonList.vue";
+import SortOptions from "../components/SortOptions.vue";
 
 export default {
   name: "LessonsPage",
   data() {
     return {
+      sortAttribute: "subject", // Default sort attribute
+      sortOrder: "asc", // Default sort order
       lessons: [
         {
           id: 1,
@@ -153,6 +163,22 @@ export default {
   },
   components: {
     LessonList,
+    SortOptions,
+  },
+  computed: {
+    sortedLessons() {
+      const sorted = [...this.lessons];
+      sorted.sort((a, b) => {
+        let result;
+        if (typeof a[this.sortAttribute] === "string") {
+          result = a[this.sortAttribute].localeCompare(b[this.sortAttribute]);
+        } else {
+          result = a[this.sortAttribute] - b[this.sortAttribute];
+        }
+        return this.sortOrder === "asc" ? result : -result;
+      });
+      return sorted;
+    },
   },
 };
 </script>
