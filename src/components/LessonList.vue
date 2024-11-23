@@ -1,6 +1,10 @@
 <template>
   <div class="lesson-list grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-    <LessonItem v-for="lesson in lessons" :key="lesson.id" :lesson="lesson" />
+    <LessonItem
+      v-for="lesson in lessons"
+      :key="lesson.id"
+      :lesson="lesson"
+      @add-to-cart="handleAddToCart" />
   </div>
 </template>
 
@@ -18,9 +22,14 @@ export default {
   components: {
     LessonItem,
   },
+  methods: {
+    handleAddToCart(lesson) {
+      this.$emit("add-to-cart", lesson);
+    },
+  },
 };
 </script>
 
 <style scoped>
-/* Custom styles can be added if needed */
+/* Custom styles */
 </style>

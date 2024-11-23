@@ -15,7 +15,7 @@
       <p class="text-gray-700">Available Spaces: {{ lesson.spaces }}</p>
       <button
         :disabled="lesson.spaces === 0"
-        @click="$emit('add-to-cart', lesson)"
+        @click="addToCart"
         class="bg-blue-600 hover:bg-blue-700 w-full text-white px-4 py-2 mt-4 rounded disabled:opacity-50 disabled:cursor-not-allowed">
         Add to Cart
       </button>
@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import { toast } from "vue3-toastify"; // Import the toast function
+
 export default {
   name: "LessonItem",
   props: {
@@ -35,6 +37,28 @@ export default {
   methods: {
     onImageError(event) {
       event.target.src = "art.jpg";
+    },
+    addToCart() {
+      if (this.lesson.spaces > 0) {
+        // Decrease the space count when added to cart
+        this.lesson.spaces--;
+        this.$emit("add-to-cart", this.lesson);
+
+        // Show a success toast message
+        toast.success(`${this.lesson.subject} has been added to your cart!`, {
+          position: "top-right", // You can adjust the position
+          autoClose: 3000, // Time in ms for auto close
+        });
+      } else {
+        // Show a warning toast message if no spaces are available
+        toast.error(
+          `Sorry, no more spaces available for ${this.lesson.subject}.`,
+          {
+            position: "top-right",
+            autoClose: 3000,
+          }
+        );
+      }
     },
   },
 };

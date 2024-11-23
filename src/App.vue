@@ -72,7 +72,7 @@
 </template>
 
 <script>
-// import "font-awesome/css/font-awesome.min.css";
+import "vue3-toastify/dist/index.css";
 
 export default {
   name: "App",

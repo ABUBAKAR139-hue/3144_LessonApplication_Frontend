@@ -7,7 +7,7 @@
       @update:sortAttribute="sortAttribute = $event"
       @update:sortOrder="sortOrder = $event" />
 
-    <LessonList :lessons="sortedLessons" />
+    <LessonList :lessons="sortedLessons" @add-to-cart="handleAddToCart" />
   </div>
 </template>
 
