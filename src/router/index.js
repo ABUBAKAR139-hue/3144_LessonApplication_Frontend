@@ -1,23 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
-import LessonsPage from "../views/LessonsPage.vue/"; // Lessons Page
-import ShoppingCartPage from "../views/ShoppingCartPage.vue"; // Shopping Cart Page
-import ConfirmationPage from "../views/ConfirmationPage.vue"; // Confirmation Page
+import LessonsPage from "../views/LessonsPage.vue";
+import ShoppingCartPage from "../views/ShoppingCartPage.vue";
+import ConfirmationPage from "../views/ConfirmationPage.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
-    component: LessonsPage, // Route to Lessons Page
+    component: LessonsPage,
   },
   {
     path: "/cart",
-    name: "cart",
-    component: ShoppingCartPage, // Route to Shopping Cart Page
+    name: "ShoppingCartPage",
+    component: ShoppingCartPage,
+    props: (route) => ({ cart: route.params.cart || [] }),
   },
   {
     path: "/confirmation",
     name: "confirmation",
-    component: ConfirmationPage, // Route to Confirmation Page
+    component: ConfirmationPage,
   },
 ];
 

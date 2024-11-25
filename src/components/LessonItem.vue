@@ -8,7 +8,7 @@
       alt="Lesson Image"
       class="w-full h-40 object-cover rounded-t-md" />
     <!-- Lesson Details -->
-    <div class="p-4 w-full">
+    <div class="p-4 w-full flex flex-col justify-between flex-grow">
       <h2 class="text-xl font-semibold mb-2">Subject: {{ lesson.subject }}</h2>
       <p class="text-gray-700">Location: {{ lesson.location }}</p>
       <p class="text-gray-700">Price: £{{ lesson.price }}</p>
@@ -36,12 +36,11 @@ export default {
   },
   methods: {
     onImageError(event) {
-      event.target.src = "art.jpg";
+      event.target.src = "art.jpg"; // Default image if original one fails to load
     },
     addToCart() {
       if (this.lesson.spaces > 0) {
-        // Decrease the space count when added to cart
-        this.lesson.spaces--;
+        // Emit the event to the parent component to update the cart and spaces
         this.$emit("add-to-cart", this.lesson);
 
         // Show a success toast message

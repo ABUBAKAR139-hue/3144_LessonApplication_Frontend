@@ -8,6 +8,16 @@
       @update:sortOrder="sortOrder = $event" />
 
     <LessonList :lessons="sortedLessons" @add-to-cart="handleAddToCart" />
+
+    <!-- "View Cart" Button -->
+    <div class="view-cart-container flex justify-center mt-8 pb-8">
+      <button
+        class="view-cart-btn bg-blue-500 text-white py-2 px-4 rounded-md text-lg cursor-pointer transition ease-in-out duration-300 disabled:bg-gray-300 disabled:cursor-not-allowed hover:enabled:bg-blue-700"
+        :disabled="cart.length === 0"
+        @click="navigateToCart">
+        View Shopping Cart
+      </button>
+    </div>
   </div>
 </template>
 
@@ -19,8 +29,8 @@ export default {
   name: "LessonsPage",
   data() {
     return {
-      sortAttribute: "subject", // Default sort attribute
-      sortOrder: "asc", // Default sort order
+      sortAttribute: "subject",
+      sortOrder: "asc",
       lessons: [
         {
           id: 1,
@@ -159,8 +169,10 @@ export default {
           image: "/images/physics.jpg",
         },
       ],
+      cart: [],
     };
   },
+  cart: JSON.parse(localStorage.getItem("cart")) || [], // Read cart from localStorage on load
   components: {
     LessonList,
     SortOptions,
@@ -178,6 +190,28 @@ export default {
         return this.sortOrder === "asc" ? result : -result;
       });
       return sorted;
+    },
+  },
+  methods: {
+    navigateToCart() {
+      this.$router.push({ name: "ShoppingCartPage" }); // Navigate to shopping cart page
+    },
+    handleAddToCart(lesson) {
+      // Check if there are still available spaces before adding
+      if (lesson.spaces > 0) {
+        // Add the lesson to the cart
+        this.cart.push({ ...lesson });
+
+        // Decrease spaces for that lesson
+        lesson.spaces--;
+
+        // Save the updated cart to localStorage
+        localStorage.setItem("cart", JSON.stringify(this.cart));
+
+        console.log(this.cart);
+      } else {
+        console.log("No available spaces left for this lesson.");
+      }
     },
   },
 };
