@@ -83,7 +83,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-/* No custom styles needed as Tailwind is being used */
-</style>

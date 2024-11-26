@@ -8,7 +8,6 @@
       class="cart-container grid grid-cols-1 lg:grid-cols-12 gap-6 w-full mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Cart Items Section -->
       <div class="cart-items col-span-9">
-        <!-- Shopping Cart Title -->
         <h1 class="text-2xl font-semibold mb-6 pl-4">Shopping Cart</h1>
         <CartList :cart="cart" @remove="removeFromCart" />
         <p
@@ -21,7 +20,6 @@
 
       <!-- Checkout Form Section -->
       <div class="checkout-form col-span-3 flex flex-col h-full">
-        <!-- Checkout Title -->
         <h1 class="text-2xl font-semibold mb-4 pl-2">Checkout</h1>
 
         <div class="bg-white p-4 rounded-lg shadow">
@@ -67,43 +65,26 @@ export default {
   },
   computed: {
     isCheckoutEnabled() {
-      // Enable button only if both fields are valid
       return this.customerName && this.customerPhone;
     },
   },
   methods: {
-    // Remove item from the cart
     removeFromCart(lesson) {
       this.cart = this.cart.filter((item) => item !== lesson);
       localStorage.setItem("cart", JSON.stringify(this.cart));
     },
-
-    // Update customer information from the checkout form
     updateCheckoutInfo({ name, phone }) {
       this.customerName = name;
       this.customerPhone = phone;
     },
-
-    // Handle the checkout process
     checkout() {
       if (this.cart.length === 0) {
-        // If the cart is empty, show a message or do not proceed with checkout
         alert("Your cart is empty. Please add items before checking out.");
         return;
       }
-
-      // Mark the order as submitted
       this.orderSubmitted = true;
-
-      // Clear the cart after successful checkout
       localStorage.removeItem("cart");
-
-      // You can add any further post-order logic here (e.g., sending data to a server, etc.)
     },
   },
 };
 </script>
-
-<style scoped>
-/* You can add specific styles here for the ShoppingCartPage */
-</style>

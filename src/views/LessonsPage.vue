@@ -194,15 +194,11 @@ export default {
   },
   methods: {
     navigateToCart() {
-      this.$router.push({ name: "ShoppingCartPage" }); // Navigate to shopping cart page
+      this.$router.push({ name: "ShoppingCartPage" });
     },
     handleAddToCart(lesson) {
-      // Check if there are still available spaces before adding
       if (lesson.spaces > 0) {
-        // Add the lesson to the cart
         this.cart.push({ ...lesson });
-
-        // Decrease spaces for that lesson
         lesson.spaces--;
 
         // Save the updated cart to localStorage

@@ -10,7 +10,3 @@ export default {
   name: "ConfirmationMessage",
 };
 </script>
-
-<style scoped>
-/* Optional: Additional styling if needed */
-</style>

@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { toast } from "vue3-toastify"; // Import the toast function
+import { toast } from "vue3-toastify";
 
 export default {
   name: "LessonItem",
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     onImageError(event) {
-      event.target.src = "art.jpg"; // Default image if original one fails to load
+      event.target.src = "art.jpg";
     },
     addToCart() {
       if (this.lesson.spaces > 0) {

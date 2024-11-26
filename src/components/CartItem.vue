@@ -29,11 +29,11 @@
 export default {
   name: "CartItem",
   props: {
-    lesson: Object, // The lesson item passed down from the parent
+    lesson: Object,
   },
   methods: {
     onImageError(event) {
-      event.target.src = "default-image.jpg"; // Set a fallback image if the image URL fails
+      event.target.src = "default-image.jpg";
     },
     removeFromCart() {
       this.$emit("remove", this.lesson); // Emit event to the parent to handle the removal

@@ -29,7 +29,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-/* Custom styles */
-</style>

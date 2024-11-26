@@ -14,7 +14,3 @@ export default {
   name: "CartButton",
 };
 </script>
-
-<style scoped>
-/* You can add specific styles for the button here if needed */
-</style>
