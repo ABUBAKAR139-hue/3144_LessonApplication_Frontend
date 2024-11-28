@@ -30,6 +30,7 @@ const RAW_RUNTIME_STATE =
           ["@vitejs/plugin-vue", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:5.2.0"],\
           ["@vue/test-utils", "npm:2.4.6"],\
           ["autoprefixer", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:10.4.20"],\
+          ["axios", "npm:1.7.8"],\
           ["font-awesome", "npm:4.7.0"],\
           ["jsdom", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:25.0.1"],\
           ["postcss", "npm:8.4.49"],\
@@ -51,6 +52,7 @@ const RAW_RUNTIME_STATE =
           ["@vitejs/plugin-vue", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:5.2.0"],\
           ["@vue/test-utils", "npm:2.4.6"],\
           ["autoprefixer", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:10.4.20"],\
+          ["axios", "npm:1.7.8"],\
           ["font-awesome", "npm:4.7.0"],\
           ["jsdom", "virtual:e230429bf1aff4f2fbdd438b877a2027ddd26f1067396bc623bdf82b500ca9c51cf4ceb9a6086eb08c708d1db3c56e5216e82ff89805148e16bb90417aec6795#npm:25.0.1"],\
           ["postcss", "npm:8.4.49"],\
@@ -1039,6 +1041,18 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["axios", [\
+      ["npm:1.7.8", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/axios-npm-1.7.8-b20f5c399f-10c0.zip/node_modules/axios/",\
+        "packageDependencies": [\
+          ["axios", "npm:1.7.8"],\
+          ["follow-redirects", "virtual:b20f5c399f1c73779564cfbf31ebf34158d62e6122d6790256982fed4a9dc55158231d1376ae0d31259b225576e217004a11eb64342859f09e60586674e3bee9#npm:1.15.9"],\
+          ["form-data", "npm:4.0.1"],\
+          ["proxy-from-env", "npm:1.1.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["balanced-match", [\
       ["npm:1.0.2", {\
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/balanced-match-npm-1.0.2-a53c126459-10c0.zip/node_modules/balanced-match/",\
@@ -1570,6 +1584,28 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["fill-range", "npm:7.1.1"],\
           ["to-regex-range", "npm:5.0.1"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["follow-redirects", [\
+      ["npm:1.15.9", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/follow-redirects-npm-1.15.9-539785d34c-10c0.zip/node_modules/follow-redirects/",\
+        "packageDependencies": [\
+          ["follow-redirects", "npm:1.15.9"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:b20f5c399f1c73779564cfbf31ebf34158d62e6122d6790256982fed4a9dc55158231d1376ae0d31259b225576e217004a11eb64342859f09e60586674e3bee9#npm:1.15.9", {\
+        "packageLocation": "./.yarn/__virtual__/follow-redirects-virtual-6fdfc913d4/4/AppData/Local/Yarn/Berry/cache/follow-redirects-npm-1.15.9-539785d34c-10c0.zip/node_modules/follow-redirects/",\
+        "packageDependencies": [\
+          ["follow-redirects", "virtual:b20f5c399f1c73779564cfbf31ebf34158d62e6122d6790256982fed4a9dc55158231d1376ae0d31259b225576e217004a11eb64342859f09e60586674e3bee9#npm:1.15.9"],\
+          ["@types/debug", null],\
+          ["debug", null]\
+        ],\
+        "packagePeers": [\
+          "@types/debug",\
+          "debug"\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2597,6 +2633,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/proto-list-npm-1.2.4-a96a43df28-10c0.zip/node_modules/proto-list/",\
         "packageDependencies": [\
           ["proto-list", "npm:1.2.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["proxy-from-env", [\
+      ["npm:1.1.0", {\
+        "packageLocation": "../../../AppData/Local/Yarn/Berry/cache/proxy-from-env-npm-1.1.0-c13d07f26b-10c0.zip/node_modules/proxy-from-env/",\
+        "packageDependencies": [\
+          ["proxy-from-env", "npm:1.1.0"]\
         ],\
         "linkType": "HARD"\
       }]\
