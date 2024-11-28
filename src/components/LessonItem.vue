@@ -3,7 +3,7 @@
     class="lesson-item bg-white rounded-md shadow-md transition-transform transform hover:scale-105 hover:shadow-lg flex flex-col items-start">
     <!-- Lesson Image -->
     <img
-      :src="lesson.image"
+      :src="getImageUrl(lesson.image)"
       @error="onImageError"
       alt="Lesson Image"
       class="w-full h-40 object-cover rounded-t-md" />
@@ -35,6 +35,10 @@ export default {
     },
   },
   methods: {
+    getImageUrl(imagePath) {
+      const baseUrl = "http://localhost:5000";
+      return `${baseUrl}${imagePath}`; // Combine base URL with image path
+    },
     onImageError(event) {
       event.target.src = "art.jpg";
     },
@@ -45,8 +49,8 @@ export default {
 
         // Show a success toast message
         toast.success(`${this.lesson.subject} has been added to your cart!`, {
-          position: "top-right", // You can adjust the position
-          autoClose: 3000, // Time in ms for auto close
+          position: "top-right",
+          autoClose: 3000,
         });
       } else {
         // Show a warning toast message if no spaces are available

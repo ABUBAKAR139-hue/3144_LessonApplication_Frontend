@@ -3,7 +3,7 @@
     class="cart-item bg-white rounded-md shadow-md transition-transform transform hover:scale-105 hover:shadow-lg flex flex-col items-start">
     <!-- Lesson Image -->
     <img
-      :src="lesson.image"
+      :src="getImageUrl(lesson.image)"
       @error="onImageError"
       alt="Lesson Image"
       class="w-full h-40 object-cover rounded-t-md" />
@@ -32,6 +32,10 @@ export default {
     lesson: Object,
   },
   methods: {
+    getImageUrl(imagePath) {
+      const baseUrl = "http://localhost:5000"; // Define your base URL
+      return `${baseUrl}${imagePath}`; // Combine base URL with image path
+    },
     onImageError(event) {
       event.target.src = "default-image.jpg";
     },

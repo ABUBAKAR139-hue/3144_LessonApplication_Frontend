@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import LessonList from "../components/LessonList.vue";
 import SortOptions from "../components/SortOptions.vue";
 
@@ -31,148 +32,10 @@ export default {
     return {
       sortAttribute: "subject",
       sortOrder: "asc",
-      lessons: [
-        {
-          id: 1,
-          subject: "Psychology",
-          location: "London",
-          price: 20,
-          spaces: 5,
-          image: "/images/Psychology.jpg",
-        },
-        {
-          id: 2,
-          subject: "Art",
-          location: "Bristol",
-          price: 15,
-          spaces: 5,
-          image: "/images/art.jpg",
-        },
-        {
-          id: 3,
-          subject: "Biology",
-          location: "Manchester",
-          price: 10,
-          spaces: 5,
-          image: "/images/biology.jpg",
-        },
-        {
-          id: 4,
-          subject: "Chemistry",
-          location: "Liverpool",
-          price: 18,
-          spaces: 5,
-          image: "/images/chemistry.jpg",
-        },
-        {
-          id: 5,
-          subject: "Computer Science",
-          location: "Oxford",
-          price: 25,
-          spaces: 5,
-          image: "/images/computer.jpg",
-        },
-        {
-          id: 6,
-          subject: "Economics",
-          location: "Cambridge",
-          price: 22,
-          spaces: 5,
-          image: "/images/economics.jpg",
-        },
-        {
-          id: 7,
-          subject: "Engineering",
-          location: "Edinburgh",
-          price: 27,
-          spaces: 5,
-          image: "/images/engineering.jpg",
-        },
-        {
-          id: 8,
-          subject: "English",
-          location: "Leeds",
-          price: 15,
-          spaces: 5,
-          image: "/images/english.jpg",
-        },
-        {
-          id: 9,
-          subject: "French",
-          location: "Glasgow",
-          price: 19,
-          spaces: 5,
-          image: "/images/french.jpg",
-        },
-        {
-          id: 10,
-          subject: "Geography",
-          location: "Birmingham",
-          price: 24,
-          spaces: 5,
-          image: "/images/geography.jpg",
-        },
-        {
-          id: 11,
-          subject: "History",
-          location: "London",
-          price: 20,
-          spaces: 5,
-          image: "/images/history.jpg",
-        },
-        {
-          id: 12,
-          subject: "Law",
-          location: "Manchester",
-          price: 30,
-          spaces: 5,
-          image: "/images/law.jpg",
-        },
-        {
-          id: 13,
-          subject: "Mathematics",
-          location: "Cambridge",
-          price: 22,
-          spaces: 5,
-          image: "/images/mathematics.jpg",
-        },
-        {
-          id: 14,
-          subject: "Music",
-          location: "Liverpool",
-          price: 30,
-          spaces: 5,
-          image: "/images/music.jpg",
-        },
-        {
-          id: 15,
-          subject: "Philosophy",
-          location: "Oxford",
-          price: 18,
-          spaces: 5,
-          image: "/images/philosophy.jpg",
-        },
-        {
-          id: 16,
-          subject: "Physical Education",
-          location: "Edinburgh",
-          price: 15,
-          spaces: 5,
-          image: "/images/physicaleducation.jpg",
-        },
-        {
-          id: 17,
-          subject: "Physics",
-          location: "Bristol",
-          price: 20,
-          spaces: 5,
-          image: "/images/physics.jpg",
-        },
-      ],
-      cart: [],
+      lessons: [],
+      cart: JSON.parse(localStorage.getItem("cart")) || [],
     };
   },
-  cart: JSON.parse(localStorage.getItem("cart")) || [], // Read cart from localStorage on load
   components: {
     LessonList,
     SortOptions,
@@ -193,6 +56,14 @@ export default {
     },
   },
   methods: {
+    async fetchLessons() {
+      try {
+        const response = await axios.get("http://localhost:5000/lessons"); // Replace with your deployed backend URL
+        this.lessons = response.data; // Set lessons to the fetched data
+      } catch (error) {
+        console.error("Failed to fetch lessons:", error);
+      }
+    },
     navigateToCart() {
       this.$router.push({ name: "ShoppingCartPage" });
     },
@@ -203,12 +74,13 @@ export default {
 
         // Save the updated cart to localStorage
         localStorage.setItem("cart", JSON.stringify(this.cart));
-
-        console.log(this.cart);
       } else {
         console.log("No available spaces left for this lesson.");
       }
     },
+  },
+  mounted() {
+    this.fetchLessons(); // Fetch lessons when the component mounts
   },
 };
 </script>
