@@ -30,11 +30,26 @@ export default {
   name: "CartItem",
   props: {
     lesson: Object,
+    required: true,
+    validator(value) {
+      return (
+        value &&
+        value.image &&
+        value.subject &&
+        value.location &&
+        value.price &&
+        value.spaces
+      );
+    },
+  },
+  computed: {
+    baseUrl() {
+      return "https://three144-lessonapplication-backend.onrender.com";
+    },
   },
   methods: {
     getImageUrl(imagePath) {
-      const baseUrl = "https://three144-lessonapplication-backend.onrender.com";
-      return `${baseUrl}${imagePath}`;
+      return `${this.baseUrl}${imagePath}`;
     },
     onImageError(event) {
       event.target.src = "default-image.jpg";

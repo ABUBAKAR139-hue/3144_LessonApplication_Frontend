@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import apiClient from "@/api";
 import LessonList from "../components/LessonList.vue";
 import SortOptions from "../components/SortOptions.vue";
 
@@ -58,10 +58,8 @@ export default {
   methods: {
     async fetchLessons() {
       try {
-        const response = await axios.get(
-          "https://three144-lessonapplication-backend.onrender.com/lessons"
-        );
-        this.lessons = response.data; // Set lessons to the fetched data
+        const response = await apiClient.get("/lessons");
+        this.lessons = response.data;
       } catch (error) {
         console.error("Failed to fetch lessons:", error);
       }
@@ -82,7 +80,7 @@ export default {
     },
   },
   mounted() {
-    this.fetchLessons(); // Fetch lessons when the component mounts
+    this.fetchLessons();
   },
 };
 </script>

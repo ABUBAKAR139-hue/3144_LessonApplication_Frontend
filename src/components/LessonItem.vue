@@ -32,6 +32,16 @@ export default {
     lesson: {
       type: Object,
       required: true,
+      validator(value) {
+        return (
+          value &&
+          value.subject &&
+          value.location &&
+          value.price &&
+          value.spaces &&
+          value.image
+        );
+      },
     },
   },
   methods: {

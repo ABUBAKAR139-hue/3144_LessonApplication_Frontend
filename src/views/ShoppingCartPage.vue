@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import apiClient from "@/api";
 import CartList from "../components/CartList.vue";
 import CartButton from "../components/CartButton.vue";
 import CheckoutForm from "../components/CheckoutForm.vue";
@@ -88,15 +88,12 @@ export default {
       const orderData = {
         name: this.customerName,
         phoneNumber: this.customerPhone,
-        lessonIDs: this.cart.map((item) => item.id), // Assuming each cart item has an 'id' field
-        numberOfSpaces: this.cart.length, // Adjust if you have a different way of counting spaces
+        lessonIDs: this.cart.map((item) => item.id),
+        numberOfSpaces: this.cart.length,
       };
 
       try {
-        const response = await axios.post(
-          "https://three144-lessonapplication-backend.onrender.com/orders",
-          orderData
-        );
+        const response = await apiClient.post("/orders", orderData);
         console.log("Order created successfully:", response.data);
 
         // Set orderSubmitted to true to show the confirmation message
