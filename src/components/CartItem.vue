@@ -33,8 +33,8 @@ export default {
   },
   methods: {
     getImageUrl(imagePath) {
-      const baseUrl = "http://localhost:5000"; // Define your base URL
-      return `${baseUrl}${imagePath}`; // Combine base URL with image path
+      const baseUrl = "https://three144-lessonapplication-backend.onrender.com";
+      return `${baseUrl}${imagePath}`;
     },
     onImageError(event) {
       event.target.src = "default-image.jpg";

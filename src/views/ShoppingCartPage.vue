@@ -94,7 +94,7 @@ export default {
 
       try {
         const response = await axios.post(
-          "http://localhost:5000/orders",
+          "https://three144-lessonapplication-backend.onrender.com/orders",
           orderData
         );
         console.log("Order created successfully:", response.data);

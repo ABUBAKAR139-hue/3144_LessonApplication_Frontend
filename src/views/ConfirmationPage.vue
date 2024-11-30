@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ConfirmationMessage from "@/components/ConfirmationMessage.vue"; // Import the ConfirmationMessage component
+import ConfirmationMessage from "@/components/ConfirmationMessage.vue";
 
 export default {
   name: "ConfirmationPage",

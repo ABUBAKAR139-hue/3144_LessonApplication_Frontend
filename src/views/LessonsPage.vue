@@ -58,7 +58,9 @@ export default {
   methods: {
     async fetchLessons() {
       try {
-        const response = await axios.get("http://localhost:5000/lessons"); // Replace with your deployed backend URL
+        const response = await axios.get(
+          "https://three144-lessonapplication-backend.onrender.com/lessons"
+        );
         this.lessons = response.data; // Set lessons to the fetched data
       } catch (error) {
         console.error("Failed to fetch lessons:", error);

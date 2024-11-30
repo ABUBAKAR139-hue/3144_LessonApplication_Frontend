@@ -41,7 +41,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-/* The custom CSS is no longer needed because we replaced it with Tailwind CSS */
-</style>
