@@ -1,31 +1,27 @@
-import axios from "axios";
+const BASE_URL =
+  import.meta.env.VITE_APP_BASE_URL ||
+  "https://three144-lessonapplication-backend.onrender.com";
 
-const apiClient = axios.create({
-  baseURL: "https://three144-lessonapplication-backend.onrender.com",
-  headers: {
-    "Content-Type": "application/json",
-  },
-});
+const fetchClient = async (endpoint, options = {}) => {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      ...(options.headers || {}),
+    },
+    ...options,
+  };
 
-// Request interceptor
-apiClient.interceptors.request.use(
-  (config) => {
-    return config;
-  },
-  (error) => {
-    return Promise.reject(error);
+  try {
+    const response = await fetch(`${BASE_URL}${endpoint}`, config);
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.message || "API request failed");
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Fetch API error:", error);
+    throw error;
   }
-);
+};
 
-// Response interceptor
-apiClient.interceptors.response.use(
-  (response) => {
-    return response;
-  },
-  (error) => {
-    console.error("API error:", error);
-    return Promise.reject(error);
-  }
-);
-
-export default apiClient;
+export default fetchClient;

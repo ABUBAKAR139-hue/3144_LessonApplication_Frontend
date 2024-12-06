@@ -84,7 +84,6 @@ export default {
         return;
       }
 
-      // Prepare order data to send to the backend
       const orderData = {
         name: this.customerName,
         phoneNumber: this.customerPhone,
@@ -93,16 +92,14 @@ export default {
       };
 
       try {
-        const response = await apiClient.post("/orders", orderData);
-        console.log("Order created successfully:", response.data);
+        const response = await fetchClient("/orders", {
+          method: "POST",
+          body: JSON.stringify(orderData),
+        });
+        console.log("Order created successfully:", response);
 
-        // Set orderSubmitted to true to show the confirmation message
         this.orderSubmitted = true;
-
-        // Clear cart from localStorage
         localStorage.removeItem("cart");
-
-        // Optionally, reset cart data and customer info (to reset the page)
         this.cart = [];
         this.customerName = "";
         this.customerPhone = "";

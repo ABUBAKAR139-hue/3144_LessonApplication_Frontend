@@ -2,15 +2,16 @@
   "name": "3144-lessonapplication-frontend",
   "version": "0.0.0",
   "private": true,
+  "homepage": "https://abubakar139-hue.github.io/3144_LessonApplication_Frontend/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "yarn build",
     "deploy": "vite build && gh-pages -d dist",
     "preview": "vite preview",
     "test:unit": "vitest"
   },
   "dependencies": {
-    "axios": "^1.7.8",
     "font-awesome": "^4.7.0",
     "vue": "^3.5.12",
     "vue-router": "4",

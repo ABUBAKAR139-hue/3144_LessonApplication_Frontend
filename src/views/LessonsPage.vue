@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import apiClient from "@/api";
+import fetchClient from "../api/index";
 import LessonList from "../components/LessonList.vue";
 import SortOptions from "../components/SortOptions.vue";
 
@@ -58,8 +58,8 @@ export default {
   methods: {
     async fetchLessons() {
       try {
-        const response = await apiClient.get("/lessons");
-        this.lessons = response.data;
+        const lessons = await fetchClient("/lessons");
+        this.lessons = lessons;
       } catch (error) {
         console.error("Failed to fetch lessons:", error);
       }
