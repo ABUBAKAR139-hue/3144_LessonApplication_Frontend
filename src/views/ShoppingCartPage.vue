@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import apiClient from "@/api";
+import fetchClient from "@/api";
 import CartList from "../components/CartList.vue";
 import CartButton from "../components/CartButton.vue";
 import CheckoutForm from "../components/CheckoutForm.vue";

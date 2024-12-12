@@ -1,6 +1,4 @@
-const BASE_URL =
-  import.meta.env.VITE_APP_BASE_URL ||
-  "https://three144-lessonapplication-backend.onrender.com";
+const BASE_URL = import.meta.env.VITE_APP_BASE_URL || "http://localhost:5000";
 
 const fetchClient = async (endpoint, options = {}) => {
   const config = {
